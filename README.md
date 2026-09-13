@@ -1,12 +1,12 @@
 # ascii-player
 
-> 영상이면 일단 터미널에 구겨 넣습니다. 소리도 납니다. 진짜임.
+> 영상이면 일단 터미널에 구겨 넣습니다. 소리도 납니다. ㄹㅇ
 
 `ascii-player`는 FFmpeg가 읽을 수 있는 영상을 Windows 콘솔에서 실시간 ASCII
 아트로 재생하는 C++20 플레이어입니다.
 
 Bad Apple 전용 장난감 아닙니다. `mp4`, `mkv`, `avi`, `mov`, `webm`, `gif` 등
-영상 파일이면 대충 다 던져 보세요.
+영상 파일이면 대충 다 던져 보셈.
 
 ```powershell
 ascii-player.exe video.mp4
@@ -17,7 +17,7 @@ ascii-player.exe --color --charset dense video.mkv
 프레임을 이미지 파일 수천 장으로 뽑는 무식한 짓은 안 합니다. FFmpeg로 바로
 디코딩하고, bounded queue에 당장 필요한 프레임만 올려서 메모리도 얌전히 씁니다.
 
-## 뭐가 되는데?
+## 뭐가 됨?
 
 - FFmpeg 스트리밍 방식으로 영상과 오디오를 실시간 디코딩
 - 밝기 256단계 LUT로 픽셀을 ASCII 문자로 빠르게 변환
@@ -34,7 +34,7 @@ ascii-player.exe --color --charset dense video.mkv
 
 그리고 당연히 `system("cls")` 같은 화면 번쩍번쩍 대참사는 없습니다.
 
-## 일단 빌드부터 ㄱㄱ
+## 빌드 방법
 
 준비물은 이렇습니다.
 
@@ -113,7 +113,7 @@ ascii-player.exe [options] <video>
 - `Space`: 잠깐 멈춤 / 다시 재생
 - `Q` 또는 `Esc`: 탈출
 
-## 속은 어떻게 생겼노
+## 속은 어케 생겼나
 
 ```text
                          ┌─ decoded AVFrame queue (6) ─ Convert ─ ASCII queue (3) ─ Render
@@ -131,7 +131,7 @@ Renderer는 바뀐 셀이 적으면 달라진 연속 구간만 쓰고, 화면이
 단위로 한 번에 씁니다. 콘솔 출력 호출을 줄이면서도 장면 전환은 빠르게 처리하는
 작은 잔머리입니다.
 
-## 벤치마크도 해보자고
+## 벤치마크
 
 `--benchmark`는 화면과 소리를 끄고 Decode → Convert → Consume 파이프라인만
 전속력으로 돌립니다. CI나 성능 확인할 때 쓰면 됩니다.
