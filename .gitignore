@@ -1,0 +1,9 @@
+/build/
+/build-*/
+/out/
+/third_party/ffmpeg/
+/third_party/cmake/
+/third_party/ninja/
+/third_party/*.zip
+/samples/*
+!/samples/.gitkeep
